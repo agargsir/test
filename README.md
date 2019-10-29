@@ -14,7 +14,7 @@ RShell is an interactive shell where the user inputs their command(s) and our pr
 
 # Diagram
 
-![Assignment 1 - Composite UML(2)] <img width="906" alt="Screen Shot 2019-10-29 at 3 45 31 PM" src="https://user-images.githubusercontent.com/45085816/67815955-a34ec480-fa65-11e9-9a8d-e06c844cb7a9.png">
+<img width="906" alt="Screen Shot 2019-10-29 at 3 45 31 PM" src="https://user-images.githubusercontent.com/45085816/67815955-a34ec480-fa65-11e9-9a8d-e06c844cb7a9.png">
 
 
 # Classes
