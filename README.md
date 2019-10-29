@@ -14,38 +14,7 @@ RShell is an interactive shell where the user inputs their command(s) and our pr
 
 # Diagram
 
-![Assignment 1 - Composite UML(2)]CREATE TABLE `` (
-  `Execute()` <type>,
-  `Exit()` <type>,
-  `vector<int> arguments` <type>
-);
-
-CREATE TABLE `` (
-  `Execute()` <type>,
-  `Exit()` <type>
-);
-
-CREATE TABLE `` (
-  `Line *lhs` <type>,
-  `Line *rhs` <type>,
-  `Connector (Line*, Line*) : Line()` <type>,
-  `Execute()` <type>
-);
-
-CREATE TABLE `` (
-  `Execute()` <type>,
-  `Exit()` <type>
-);
-
-CREATE TABLE `` (
-  `Execute()` <type>,
-  `Exit()` <type>
-);
-
-CREATE TABLE `` (
-  `Execute()` <type>,
-  `Exit()` <type>
-);
+![Assignment 1 - Composite UML(2)]
 
 
 # Classes
