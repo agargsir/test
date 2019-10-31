@@ -277,12 +277,12 @@ Parent: Child processor completed
 
 1. Base class ```Line```. 
 2. Leaf Class ```Command```.
-   ***Test Command*** - unit tests to check if commands and arguments pass properly and child processors terminate safely.
-3. Composite ```Connector``` Class and its subclasses And_Op, Or_Op, and Semicol_Op.
-   ***Test Connector*** - unit tests for each component and integration testing.
-4. Parsing Functions for user input and obj trees.
-   ***Test*** - run tests to see code line up.
-5. Main func for Rshell to hold all parts aforementioned. 
-   ***Test Main*** - Integration tests.
+3. ***Test Command*** - unit tests to check if commands and arguments pass properly and child processors terminate safely.
+4. Composite ```Connector``` Class and its subclasses And_Op, Or_Op, and Semicol_Op.
+5. ***Test Connector*** - unit tests for each component and integration testing.
+6. Parsing Functions for user input and obj trees.
+7. ***Test*** - run tests to see code line up.
+8. Main func for Rshell to hold all parts aforementioned. 
+9. ***Test Main*** - Integration tests.
 
 
