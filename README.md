@@ -274,14 +274,14 @@ Parent: Child processor completed
                       
 # Development and Testing Roadmap
 
-Base class Line 
-Leaf Class Command
-Test Command - unit tests to check if commands and arguments pass properly and child processors terminate safely.
-Composite Connector Class and its subclasses And_Op, Or_Op, and Semicol_Op.
-Test Connector - unit tests for each component and integration testing.
-Parsing Functions for user input and obj trees
-Test - run tests to see code line up
-Main func for Rshell to hold all parts aforementioned 
-Test Main - Integration tests
+1. Base class Line 
+2. Leaf Class Command
+***Test Command*** - unit tests to check if commands and arguments pass properly and child processors terminate safely.
+3. Composite Connector Class and its subclasses And_Op, Or_Op, and Semicol_Op.
+***Test Connector*** - unit tests for each component and integration testing.
+4. Parsing Functions for user input and obj trees
+***Test*** - run tests to see code line up
+5. Main func for Rshell to hold all parts aforementioned 
+***Test Main*** - Integration tests
 
 
