@@ -153,4 +153,135 @@ Parent: Child process completed
     * **Test**: Run all of the necessary unit and integration tests to verify that trees are being properly formed and the interaction between these functions and the composite objects is as it should be.
  6. Create the main function which will the RShell and integrate all of the components of this project.
     * **Test**: Run an extensive set of integration tests to ensure that everything is working as it should be.
+    
+    
+ 
+ 
+ 
+ 
+ 
+ 
+ # RShell
+# CS 100 Project: Fall 2019
+
+## Partner 1: Aditya Garg
+## SID: 862014748
+## Partner 2: Achyutha Komarlu
+## SID: 862011438
+#
+
+# Introduction
+
+RShell is a user input based interaction design, where a command is inputted and the program we have designed will run a series of parsed functions which in turn creates a composite object tree from the inputs given. Once tree is finalized the commands that were inputted will then be forked into a child class processor. Our RShell will be implemented utilizing the composite design pattern.
+
+
+# Diagram
+
+<img width="906" alt="Screen Shot 2019-10-29 at 3 45 31 PM" src="https://user-images.githubusercontent.com/45085816/67815955-a34ec480-fa65-11e9-9a8d-e06c844cb7a9.png">
+
+# Classes that we will need to implement for our RShell design
+
+Line Class (Main Abstract Class) : 
+ All following classes will need to implement the Line Class. The implements of the Execute command if successful will return a 1 else a 0. If the Exit function is called all the implements will have to manage the system exit capability.
+
+Command (Class which commands are processed) :
+The command class will contain the commands passed through a vector with its arguments, and will be the only implement of the former Execute command which in turn makes it a child processor for that command. Like the Line class running the following Execute command will similarly return a 1 if successful else a 0. And also utilizes the Exit command which safely terminates the running programs.
+ 
+Connector (Another Abstract Class with all the control operators) :
+The Connector class will hold all the control operators which will be implemented. 
+
+ There will be three Control Operator classes that will need to implement the Connector Abstract Class.
+  - And_Op
+  - Or_Op
+  - Semicolon_Op
+
+And_Op :
+The And_Op Connector Class will contain some of the Command objects as well as Connector objects and will need representation by private variables i.e. (line_1 & line_2). When Execute is called both line_1 and line_2 will call  Execute and only if both return a 1 will they be deemed successful. And calling Exit  will make all the children classes’ exit to be called and terminate all running programs.
+ 
+Or_Op:
+The And_Op Connector Class will contain some of the Command objects as well as Connector objects and will need representation by private variables i.e. (line_1 & line_2). When Execute is called both line_1 and line_2 will call  Execute and only if both return a 1 will they be deemed successful. And calling Exit  will make all the children classes’ exit to be called and terminate all running programs.
+
+Semicol_Op:
+The class will utilize a single Command and will have just the private variable line. And when Execute is called the line member will return 1 if successful and 0 if not. And Exit will call the child to terminate all running programs.
+ 
+
+# Prototypes/Research
+
+#include <iostream>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <sys/types.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <cstring>
+#include <string>
+
+int main(int argv, char **argc) { //arguments passed
+
+    ParID_t ParID = fork(); 
+ 
+       if (ParID == 0) {
+               print("Child processor id: %d\n", ParID);
+               print("Child: Running execvp()");
+
+               if (execvp(argc[1], (argc + 1)) == -1) { //child arg
+               // argc pointer shifted to actual by pointer arithmetic
+   
+                      
+                       print("Error in child process");
+                       Parerror(argc[1]);
+               }
+               std::cout << "Child: Processor finished."; 
+       }
+       if (ParID > 0) {
+               print("Parent class processor ID: %d\n", ParID);
+               print("Parent: Waiting for child processor to finish executing.\n");
+
+               ParID_t ParID_wait = waitParID(0, NULL, 0); // checks parent id to null
+
+               print("PairID_wait = %d\n", ParID_wait);
+               if (ParID_wait == -1) {
+                       Parerror("Parent");
+               } else {
+                       std::cout <<"Parent: Child process completed";
+               }
+
+       }
+       return 0;
+}
+
+```
+Needed commands in bash 
+
+To Compile: `` g++ -std=c++11 few_prototype.cpp -o few_prototype ``
+
+  To test Run 1: `` ./few_prototype ls -l && echo prototype``
+
+ Output 1:
+ ```
+Parent Process ID: 9098                                                       
+Parent: Waiting for child processor to finish executing.                                   
+Child processor id: 0                                                            
+Child: Running execvp()                                                        
+total 40                                                                       
+-rwxr-xr-x 1 akoma003 csmajs  9256 Oct 30 15:19 few_prototype                  
+-rw-r--r-- 1 akoma003 csmajs   947 Oct 30 19:21 few_prototype.cpp              
+ParID_wait = 9098                                                              
+                                                                              
+                                                                              
+Parent: Child processor completed                                                
+                                                                              
+                      
+# Development and Testing Roadmap
+
+Base class Line 
+Leaf Class Command
+Test Command - unit tests to check if commands and arguments pass properly and child processors terminate safely.
+Composite Connector Class and its subclasses And_Op, Or_Op, and Semicol_Op.
+Test Connector - unit tests for each component and integration testing.
+Parsing Functions for user input and obj trees
+Test - run tests to see code line up
+Main func for Rshell to hold all parts aforementioned 
+Test Main - Integration tests
+
 
