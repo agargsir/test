@@ -161,7 +161,7 @@ Parent: Child process completed
  
  
  
- # RShell
+# RShell
 # CS 100 Project: Fall 2019
 
 ## Partner 1: Aditya Garg
@@ -179,7 +179,7 @@ RShell is a user input based interaction design, where a command is inputted and
 
 <img width="906" alt="Screen Shot 2019-10-29 at 3 45 31 PM" src="https://user-images.githubusercontent.com/45085816/67815955-a34ec480-fa65-11e9-9a8d-e06c844cb7a9.png">
 
-# Classes that we will need to implement for our RShell design
+# Classes to implement our RShell design
 
 Line Class (Main Abstract Class) : 
  All following classes will need to implement the Line Class. The implements of the Execute command if successful will return a 1 else a 0. If the Exit function is called all the implements will have to manage the system exit capability.
@@ -269,19 +269,20 @@ total 40
 ParID_wait = 9098                                                              
                                                                               
                                                                               
-Parent: Child processor completed                                                
+Parent: Child processor completed  
+                                              
                                                                               
                       
 # Development and Testing Roadmap
 
 1. Base class ```Line```. 
 2. Leaf Class ```Command```.
-***Test Command*** - unit tests to check if commands and arguments pass properly and child processors terminate safely.
+   ***Test Command*** - unit tests to check if commands and arguments pass properly and child processors terminate safely.
 3. Composite ```Connector``` Class and its subclasses And_Op, Or_Op, and Semicol_Op.
-***Test Connector*** - unit tests for each component and integration testing.
+   ***Test Connector*** - unit tests for each component and integration testing.
 4. Parsing Functions for user input and obj trees.
-***Test*** - run tests to see code line up.
+   ***Test*** - run tests to see code line up.
 5. Main func for Rshell to hold all parts aforementioned. 
-***Test Main*** - Integration tests.
+   ***Test Main*** - Integration tests.
 
 
